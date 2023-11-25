@@ -1,100 +1,174 @@
 <div class="prettify-flashcard">
-  <div class="prettify-field prettify-field--front" style="font-family:YUMIN; font-size: 28px; text-align: center;">{{furigana:Keyword}}</div>
-  <div id="showButton2" class="prettify-button">+</div>
-  <div id="hiddenSection2" style="display: none;">
-    <hr class="prettify-divider prettify-divider--answer" id="answer" />
-    <div class="prettify-field prettify-field--back bigimage" style="text-align: center;">{{furigana:Mnemonic}}</div>
-    {{#Details}}
-    <div id="showButton" class="prettify-button">+</div>
-    <div id="hiddenSection" style="display: none;">
-      <hr class="prettify-divider prettify-divider--answer" />
-      <div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{furigana:Details}}</div>
-      {{#Support Mnemonic}}
-        <hr class="prettify-divider prettify-divider--answer" />
-        <div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{Support Mnemonic}}</div>
-      {{/Support Mnemonic}}
-      {{#Tags}}
-        <div class="prettify-tags">{{clickable:Tags}}</div>
-      {{/Tags}}
-    </div>
-    {{/Details}}
-    {{^Details}}
-    {{#Tags}}
-      <div id="showButton" class="prettify-button">+</div>
-      <div id="hiddenSection" style="display: none;">
-        <hr class="prettify-divider prettify-divider--answer" />
-        <div id="textToChangeFont" style="font-family:HGRKK; font-size: 40px; text-align: center;">{{Kanji}}</div>
-        <div class="prettify-tags">{{clickable:Tags}}</div>
-      </div>
-    {{/Tags}}
-    {{/Details}}
-  </div>
+  <div class="prettify-field prettify-field--front"  style="font-family:YUMIN; font-size: 28px; text-align: center;">{{furigana:Keyword}}</div>
+
+{{^Reading}}
+
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+
+<div style="text-align: center;" class="prettify-field prettify-field--back bigimage">{{furigana:Mnemonic}}</div>
+
+{{#Details}}
+<div id="showButton" class="prettify-button">+</div>
+<div id="hiddenSection" style="display: none;">
+
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+<div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{furigana:Details}}</div>
+
+{{#Support Mnemonic}}
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+<div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{Support Mnemonic}}</div>
+
+{{/Support Mnemonic}}
+
+  {{#Tags}}
+  <div class="prettify-tags">{{clickable:Tags}}</div>
+  {{/Tags}}
+
 </div>
 
+{{/Details}}
+
+  {{^Details}}
+
+  {{#Tags}}
+
+<div id="showButton" class="prettify-button">+</div>
+<div id="hiddenSection" style="display: none;">
+
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+
+<div id="textToChangeFont" style="font-family:HGRKK; font-size: 40px; text-align: center;">{{Kanji}}</div>
+
+  <div class="prettify-tags">{{clickable:Tags}}</div>
+</div>
+  {{/Tags}}
+	{{/Details}}
+
+</div>
+
+{{/Reading}}
+
+{{#Reading}}
+<div id="showButton2" class="prettify-button">+</div>
+<div id="hiddenSection2" style="display: none;">
+
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+
+<div style="text-align: center;" class="prettify-field prettify-field--back bigimage">{{furigana:Mnemonic}}</div>
+
+{{#Details}}
+<div id="showButton" class="prettify-button">+</div>
+<div id="hiddenSection" style="display: none;">
+
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+<div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{furigana:Details}}</div>
+
+{{#Support Mnemonic}}
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+<div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{Support Mnemonic}}</div>
+
+{{/Support Mnemonic}}
+
+  {{#Tags}}
+  <div class="prettify-tags">{{clickable:Tags}}</div>
+  {{/Tags}}
+
+</div>
+
+{{/Details}}
+
+  {{^Details}}
+
+  {{#Tags}}
+
+<div id="showButton" class="prettify-button">+</div>
+<div id="hiddenSection" style="display: none;">
+
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+
+<div id="textToChangeFont" style="font-family:HGRKK; font-size: 40px; text-align: center;">{{Kanji}}</div>
+
+  <div class="prettify-tags">{{clickable:Tags}}</div>
+</div>
+  {{/Tags}}
+	{{/Details}}
+
+</div>
+</div>
+
+{{/Reading}}
+
 <script>
-  // Toggle Font Function
+  var isFontOne = true;
+  var textElement = document.getElementById('textToChangeFont');
+
   function toggleFont() {
-    var textElement = document.getElementById('textToChangeFont');
-    if (textElement) {
-      if (textElement.style.fontFamily === 'HGRKK') {
-        textElement.style.fontFamily = 'KanjiStrokeOrders';
-      } else {
-        textElement.style.fontFamily = 'HGRKK';
-      }
+    if (isFontOne) {
+      textElement.style.fontFamily = 'KanjiStrokeOrders'; // Replace with your second font name
+    } else {
+      textElement.style.fontFamily = 'HGRKK'; // Replace with your first font name
     }
+    isFontOne = !isFontOne;
   }
 
-  // Add Event Listeners for Font Toggle if Element Exists
-  var fontToggleElement = document.getElementById('textToChangeFont');
-  if (fontToggleElement) {
-    fontToggleElement.addEventListener('click', toggleFont);
-    fontToggleElement.addEventListener('touchend', toggleFont);
-  }
+  textElement.addEventListener('click', toggleFont);
+  textElement.addEventListener('touchend', toggleFont);
+</script>
 
-  // Toggle Visibility Function
-  function toggleVisibility(hiddenSectionId, buttonId) {
+
+<script>
+document.getElementById('showButton').addEventListener('click', function() { toggleVisibility('hiddenSection', 'showButton'); });
+document.getElementById('showButton').addEventListener('touchend', function() { toggleVisibility('hiddenSection', 'showButton'); });
+
+document.getElementById('showButton2').addEventListener('click', function() { toggleVisibility('hiddenSection2', 'showButton2'); });
+document.getElementById('showButton2').addEventListener('touchend', function() { toggleVisibility('hiddenSection2', 'showButton2'); });
+
+function toggleVisibility(hiddenSectionId, buttonId) {
     var hiddenSection = document.getElementById(hiddenSectionId);
-    var button = document.getElementById(buttonId);
-    if (hiddenSection && button) {
-      if (hiddenSection.style.display === 'none') {
+    if (hiddenSection.style.display === 'none') {
         hiddenSection.style.display = 'block';
-        button.style.display = 'none'; // Hides the button
-      } else {
+    } else {
         hiddenSection.style.display = 'none';
-      }
     }
-  }
+    document.getElementById(buttonId).style.display = 'none';
+}
+</script>
 
-  // Event Listeners for Toggle Visibility
-  var buttons = document.querySelectorAll('.prettify-button');
-  buttons.forEach(function(button) {
-    var targetId = button.id === 'showButton' ? 'hiddenSection' : 'hiddenSection2';
-    button.addEventListener('click', function() {
-      toggleVisibility(targetId, button.id);
-    });
-    button.addEventListener('touchend', function() {
-      toggleVisibility(targetId, button.id);
-    });
-  });
-
+<script>
   // Split hierarchical tags
-  var tagsContainerEls = document.querySelectorAll('.prettify-tags');
-  tagsContainerEls.forEach(function(container) {
-    var tags = container.textContent.split(' ').filter(Boolean);
-    var html = tags.map(function(tag) {
-      var parts = tag.split('::').filter(Boolean);
-      return "<span class='prettify-tag'>" + parts[parts.length - 1] + "</span>";
-    }).join(' ');
-    container.innerHTML = html;
-  });
-
-  // Breadcrumbs to current deck
-  var deckEl = document.querySelector('.prettify-deck');
-  if (deckEl) {
-    var subDecks = deckEl.textContent.split('::').filter(Boolean);
-    deckEl.innerHTML = subDecks.map(function(subDeck) {
-      return "<span class='prettify-subdeck'>" + subDeck + "</span>";
-    }).join('&nbsp;/&nbsp;');
+  var tagsContainerEl = document.querySelectorAll('.prettify-tags > *')
+  if (tagsContainerEl.length > 0) {
+    var tags = []
+    tagsContainerEl.forEach((tagEl) => {
+      tagEl.classList.add('prettify-tag')
+      tags.push(tagEl.innerHTML)
+      tags.forEach((tag) => {
+        var childTag = tag.split('::').filter(Boolean)
+        tagEl.innerHTML = childTag[childTag.length - 1].trim()
+      })
+    })
+  } else {
+    tagsContainerEl = document.querySelector('.prettify-tags')
+    var tags = tagsContainerEl.innerHTML.split(' ').filter(Boolean)
+    var html = ''
+    tags.forEach((tag) => {
+      var childTag = tag.split('::').filter(Boolean)
+      html +=
+        "<span class='prettify-tag'>" +
+        childTag[childTag.length - 1] +
+        '</span>'
+    })
+    tagsContainerEl.innerHTML = html
   }
 </script>
 
+<script>
+  // Breadcrumbs to current deck
+  var deckEl = document.querySelector('.prettify-deck')
+  var subDecks = deckEl.innerHTML.split('::').filter(Boolean)
+  html = []
+  subDecks.forEach((subDeck) => {
+    html.push("<span class='prettify-subdeck'>" + subDeck + '</span>')
+  })
+  deckEl.innerHTML = html.join('&nbsp;/&nbsp;')
+</script>
