@@ -1,5 +1,5 @@
 <h1 align="center">
-	NeoMemo
+	NeoMnemo
 </h1>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 <h2>Usage</h2>
 
-<p>NeoMemo, built upon Prettify, is a project I created during my studies of Japanese History. It functions as follows:</p><br>
+<p>NeoMnemo, built upon Prettify, is a project I created during my studies of Japanese History. It functions as follows:</p><br>
 
 - The front part acts as a prompt to recall events associated with a specific keyword. Initially, you attempt to write it down and then flip the card to verify your writing.
 - Next, you endeavor to recall the mnemonic image or story linked to the event, which serves as a catalyst for remembering subsequent events.
