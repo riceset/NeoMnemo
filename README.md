@@ -18,5 +18,5 @@ NeoMemo, built upon Prettify, is a project I created during my studies of Japane
 - Ultimately, you can validate your recollection by reading the event's description.
 
 <div align="center">
-  <img src="https://github.com/riceset/NeoMnemo/assets/48802655/159edce4-5d57-40e9-8bdc-d24ffcfe08cd" alt="Image 1" style="width: 80%"/>
+  <img src="https://github.com/riceset/NeoMnemo/assets/48802655/159edce4-5d57-40e9-8bdc-d24ffcfe08cd" alt="Image 1"/>
 </div>
