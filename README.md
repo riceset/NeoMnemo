@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://github.com/riceset/philo-forgot/assets/48802655/ad6f7b17-db42-4fc9-b20e-398d9a75b100" alt="NeoMemo" width="150" height="150"/>
+  <img src="https://github.com/riceset/NeoMnemo/assets/48802655/83c1d1d4-94a4-424b-af1b-ade40e28d4a9" alt="NeoMemo" width="150" height="150"/>
 </p>
 
 <div align="center">
