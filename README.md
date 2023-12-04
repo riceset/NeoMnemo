@@ -7,7 +7,7 @@
 </p>
 
 <div align="center">
-<i>A modern template for Anki focused on Mnemonic devices.</i>
+<i>A modern template for Anki focused on the use of Mnemonic devices.</i>
 </div>
 
 <br>
