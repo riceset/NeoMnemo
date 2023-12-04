@@ -10,7 +10,7 @@
 </div>
 <br>
 <h2>Usage</h2>
-NeoMemo, built upon Prettify, is a project I created during my studies of Japanese History. It functions as follows:
+NeoMemo, built upon [Prettify](https://github.com/pranavdeshai/anki-prettify), is a project I created during my studies of Japanese History. It functions as follows:
 <br><br>
 
 - The front part acts as a prompt to recall events associated with a specific keyword. Initially, you attempt to write it down and then flip the card to verify your writing.
