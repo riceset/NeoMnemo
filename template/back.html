@@ -1,102 +1,37 @@
 <div class="prettify-flashcard">
-  <div class="prettify-field prettify-field--front"  style="font-family:YUMIN; font-size: 28px; text-align: center;">{{furigana:Keyword}}</div>
+    <div class="prettify-field prettify-field--front" style="font-family:simsun;font-size: 28px; text-align: center;">
+        {{Pinyin}}
+    </div>
 
-{{^Reading}}
+{{#Meaning}}
+        <hr class="prettify-divider prettify-divider--answer" id="answer" />
+{{/Meaning}}
+        <div style="text-align: center;" class="prettify-field prettify-field--back bigimage">{{furigana:Meaning}}</div>
 
-  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+        {{#Details}}
+            <div id="showButton" class="prettify-button">+</div>
+            <div id="hiddenSection" style="display: none;">
+                <hr class="prettify-divider prettify-divider--answer" id="answer" />
+                <div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{furigana:Details}}</div>
 
-<div style="text-align: center;" class="prettify-field prettify-field--back bigimage">{{furigana:Mnemonic}}</div>
+                {{#Tags}}
+                    <div class="prettify-tags">{{clickable:Tags}}</div>
+                {{/Tags}}
+            </div>
+        {{/Details}}
 
-{{#Details}}
-<div id="showButton" class="prettify-button">+</div>
-<div id="hiddenSection" style="display: none;">
+        {{^Details}}
+            {{#Tags}}
+                <div id="showButton" class="prettify-button">+</div>
+                <div id="hiddenSection" style="display: none;">
+                    <hr class="prettify-divider prettify-divider--answer" id="answer" />
+                    <div id="textToChangeFont" style="font-family:HGRKK; font-size: 40px; text-align: center;"></div>
+                    <div class="prettify-tags">{{clickable:Tags}}</div>
+                </div>
+            {{/Tags}}
+        {{/Details}}
 
-  <hr class="prettify-divider prettify-divider--answer" id="answer" />
-<div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{furigana:Details}}</div>
-
-{{#Support Mnemonic}}
-  <hr class="prettify-divider prettify-divider--answer" id="answer" />
-<div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{Support Mnemonic}}</div>
-
-{{/Support Mnemonic}}
-
-  {{#Tags}}
-  <div class="prettify-tags">{{clickable:Tags}}</div>
-  {{/Tags}}
-
-</div>
-
-{{/Details}}
-
-  {{^Details}}
-
-  {{#Tags}}
-
-<div id="showButton" class="prettify-button">+</div>
-<div id="hiddenSection" style="display: none;">
-
-  <hr class="prettify-divider prettify-divider--answer" id="answer" />
-
-<div id="textToChangeFont" style="font-family:HGRKK; font-size: 40px; text-align: center;">{{Kanji}}</div>
-
-  <div class="prettify-tags">{{clickable:Tags}}</div>
-</div>
-  {{/Tags}}
-	{{/Details}}
-
-</div>
-
-{{/Reading}}
-
-{{#Reading}}
-<div id="showButton2" class="prettify-button">+</div>
-<div id="hiddenSection2" style="display: none;">
-
-  <hr class="prettify-divider prettify-divider--answer" id="answer" />
-
-<div style="text-align: center;" class="prettify-field prettify-field--back bigimage">{{furigana:Mnemonic}}</div>
-
-{{#Details}}
-<div id="showButton" class="prettify-button">+</div>
-<div id="hiddenSection" style="display: none;">
-
-  <hr class="prettify-divider prettify-divider--answer" id="answer" />
-<div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{furigana:Details}}</div>
-
-{{#Support Mnemonic}}
-  <hr class="prettify-divider prettify-divider--answer" id="answer" />
-<div class="prettify-field prettify-field--back" style="font-family:YUMIN; text-align: center;">{{Support Mnemonic}}</div>
-
-{{/Support Mnemonic}}
-
-  {{#Tags}}
-  <div class="prettify-tags">{{clickable:Tags}}</div>
-  {{/Tags}}
-
-</div>
-
-{{/Details}}
-
-  {{^Details}}
-
-  {{#Tags}}
-
-<div id="showButton" class="prettify-button">+</div>
-<div id="hiddenSection" style="display: none;">
-
-  <hr class="prettify-divider prettify-divider--answer" id="answer" />
-
-<div id="textToChangeFont" style="font-family:HGRKK; font-size: 40px; text-align: center;">{{Kanji}}</div>
-
-  <div class="prettify-tags">{{clickable:Tags}}</div>
-</div>
-  {{/Tags}}
-	{{/Details}}
-
-</div>
-</div>
-
-{{/Reading}}
+{{Audio}}
 
 <script>
   var isFontOne = true;
@@ -104,9 +39,9 @@
 
   function toggleFont() {
     if (isFontOne) {
-      textElement.style.fontFamily = 'KanjiStrokeOrders'; // Replace with your second font name
+      textElement.style.fontFamily = 'KanjiStrokeOrders';
     } else {
-      textElement.style.fontFamily = 'HGRKK'; // Replace with your first font name
+      textElement.style.fontFamily = 'YUMIN';
     }
     isFontOne = !isFontOne;
   }
@@ -132,6 +67,25 @@ function toggleVisibility(hiddenSectionId, buttonId) {
     }
     document.getElementById(buttonId).style.display = 'none';
 }
+</script>
+
+<script>
+    document.getElementById('newShowButton').addEventListener('click', function() { 
+        toggleVisibility('newHiddenSection', 'newShowButton'); 
+    });
+    document.getElementById('newShowButton').addEventListener('touchend', function() { 
+        toggleVisibility('newHiddenSection', 'newShowButton'); 
+    });
+
+    function toggleVisibility(hiddenSectionId, buttonId) {
+        var hiddenSection = document.getElementById(hiddenSectionId);
+        if (hiddenSection.style.display === 'none') {
+            hiddenSection.style.display = 'block';
+        } else {
+            hiddenSection.style.display = 'none';
+        }
+        document.getElementById(buttonId).style.display = 'none';
+    }
 </script>
 
 <script>

@@ -4,7 +4,7 @@
   --card-text-align: left;
   --font-size-regular: 18px;
   --font-size-small: 19px;
-  --font-family: "Inter", -apple-system, sytem-ui, BlinkMacSystemFont, Segoe UI,
+  --font-family: simsun, "Inter", -apple-system, sytem-ui, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica, Arial, sans-serif;
   --img-width: 30%;
   --img-brightness: 0.75;
@@ -375,20 +375,13 @@ pre {
 }
 
 @font-face {
-	font-family: YUMIN;
-	src: url('_YUMIN.ttf');
+	font-family: simsun;
+	src: url('_simsun.ttf');
 }
 
 @font-face {
-	font-family: KanjiStrokeOrders;
-	src: url('_KanjiStrokeOrders.ttf');
+	font-family: kaiti;
+	src: url('_kaiti.ttf');
 }
 
-@font-face {
-	font-family: HGRKK;
-	src: url('_HGRKK.ttc');
-}
-@font-face {
-	font-family: YUGOTHB;
-	src: url('_YUGOTHB.ttc');
-}
+/* -------------------------------------------------- END OF THEME */
